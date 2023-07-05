@@ -4,12 +4,17 @@
 <?php require './db-queries/get_all_games.php'; ?>
 <?php require './partials/_game-card.php'; ?>
 <?php require './functions/price_converter.php'; ?>
+<?php require './db-queries/get_game_by_id.php'; ?>
+<?php require './partials/_card_game_detailed.php'; ?>
 <main>
     <h1>
-        Tous les jeux
+        Detail de jeu
     </h1>
 
-    <?php get_all_games(); ?>
+
+
+    <?php $game_id = intval($_GET['jeu_id']); ?>
+    <?php get_game_by_id($game_id) ?>
 </main>
 
 
