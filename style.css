@@ -1,26 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+}
+
 body {
-  background-image: url("./images/backgroung-image.png");
+  background-image: url('./images/backgroung-image.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
-  display: flex;
-  justify-content: center;
+  background-color: #fefefe;
 }
+
+.section-container {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  margin-top: 3rem;
+}
+.text-bold {
+  font-weight: 700;
+}
+
+h1 {
+  margin-top: 2rem;
+  margin-left: 4.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.console-name {
+  display: inline-block;
+  background: #0d6efd;
+  color: #fefefe;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 25px;
+}
+
+/* _________________________________________NAVBAR __________________________________________________________ */
 
 .custom-navbar {
   background: transparent;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.navbar-container {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
 }
 
 .logo-image {
+  width: 190px;
+}
+
+.nav-link-custom {
   display: block;
+  background: #0d6efd;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  color: #fefefe;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-right: 3px;
+}
+
+.nav-link-custom:hover {
+  color: #fefefe;
+}
+
+.navbar-collapse {
+  border-bottom: 2px #eeecf4 solid;
+}
+
+/* _____________________________SINGLE CARD CONTAINER && INDEX SECTION_______________________________ */
+
+.section-all-games {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.25rem;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px #eeecf4 solid;
+  border-radius: 5px;
+}
+
+.game_image {
+  height: 70%;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.game_name {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.game_price {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.see-details-button {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  width: 100px;
+}
+
+.see-details-button:hover {
+  background-color: #fefefe;
+  color: #0d6efd;
+  border: 2px solid #0d6efd;
+}
+
+/* __________________________________________PRODUCT DETAILS ________________________________ */
+.detailed-card-container {
+  display: flex;
+  gap: 1rem;
+  border: 1px #eeecf4 solid;
+  border-radius: 5px;
+  padding-right: 1.5rem;
+}
+
+h2 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+.console-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.console-span {
+  display: inline-block;
+  text-align: center;
+  background: #0d6efd;
+  color: #fefefe;
+  font-weight: 700;
+  font-size: 0.55rem;
+  border-radius: 20px;
+  width: 55px;
+  padding: 0.15rem;
+  margin-bottom: 2rem;
+}
+
+.image-in-detailed-card {
+  width: 250px;
+  height: inherit;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.release-date {
+  font-size: 0.75rem;
+  color: #8e8e91;
+  margin-bottom: 1.25rem;
+}
+.release-date-span {
+  font-size: 1rem;
+  color: #0d6efd;
+}
+
+.age-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.age-image {
+  width: 30px;
+}
+
+.big-review-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.small-review-container {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.text-blue {
+  color: #0d6efd;
 }

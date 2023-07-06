@@ -7,8 +7,24 @@
 <?php require './functions/helpers.php'; ?>
 
 <main class="section-container">
+    <?php if (isset($_GET['console_id'])) {
+        $console_id = intval($_GET['console_id']);
+        get_console_title_by_console_id($console_id);
+    } else {
+        "";
+    }
+
+    ?>
     <section class="section section-all-games">
-        <?php get_all_games(0); ?>
+        <?php if (isset($_GET['console_id'])) {
+            $console_id = intval($_GET['console_id']);
+            get_all_games($console_id);
+        } else {
+            get_all_games(0);
+        }
+
+        ?>
+
     </section>
 </main>
 
