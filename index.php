@@ -7,6 +7,11 @@
 <?php require './functions/helpers.php'; ?>
 
 <main class="section-container">
+    <?php var_dump($_SERVER);
+    $query_parameters = [];
+    parse_str($_SERVER['QUERY_STRING'], $query_parameters);
+    var_dump($query_parameters);
+    ?>
     <section class="section section-all-games">
         <?php get_all_games(0); ?>
     </section>

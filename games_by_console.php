@@ -7,6 +7,11 @@
 <?php require './functions/helpers.php'; ?>
 
 <main class="section-container">
+    <?php var_dump($_SERVER);
+    $query_parameters = [];
+    parse_str($_SERVER['QUERY_STRING'], $query_parameters);
+    var_dump($query_parameters);
+    ?>
     <?php if (isset($_GET['console_id'])) {
         $console_id = intval($_GET['console_id']);
         get_console_title_by_console_id($console_id);
