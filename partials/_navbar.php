@@ -8,6 +8,7 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom" aria-current="page" href="../index.php">Tous les jeux</a>
                     </li>
@@ -21,7 +22,16 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Trier
+                            Par age
+                        </a>
+                        <ul class="dropdown-menu">
+                            <?php get_list_of_games_by_age() ?>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle filter-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-filter"></i> Trier
                         </a>
                         <ul class="dropdown-menu">
                             <li>
@@ -47,7 +57,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-custom-drop-filters" aria-current="page" href="../index.php">Drop filters</a>
+                        <a class="nav-link filter-custom filter-custom-danger" aria-current="page" href="../index.php">Effacer tous</a>
                     </li>
                 </ul>
             </div>
