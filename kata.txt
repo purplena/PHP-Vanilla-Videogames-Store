@@ -1,19 +1,19 @@
 <?php
 
-$testData = [
+$currentUrl = [
  "http://test.com?foo=bar&order=price&direction=asc&category=2",
  "http://test.com?foo=bar",
  "http://test.com?foo=bar&order=price&direction=asc",
  "http://test.com?direction=asc&order=price&foo=bar"
 ];
 
-$url = generateUrl([
+$url = generateQueryParameters([
  'order' => 'price',
  'direction' => 'desc'
 ]); // http://test.com?foo=bar&order=price&direction=desc&category=2
-$url = generateUrl(['category' => $category]);
+$url = generateQueryParameters(['category' => $category]);
 
-function generateUrl(array $newQueryParameters)
+function generateQueryParameters(array $newQueryParameters)
 {
  //take the current query params
  //override or set the query parameters with the ones given by $newQueryParameters
@@ -23,7 +23,9 @@ function generateUrl(array $newQueryParameters)
 
 ?>
 
-<a href="<?php echo generateUrl(['order' => 'price', 'direction' => 'desc']); ?>">Trier par prix décroissant</a>
-<a href="<?php echo generateUrl(['order' => 'price', 'direction' => 'asc']); ?>">Trier par prix croissant</a>
-<a href="<?php echo generateUrl(['order' => 'note', 'direction' => 'asc']); ?>">Trier par note croissant</a>
-<a href="<?php echo generateUrl(['order' => 'note', 'direction' => 'desc']); ?>">Trier par note décroissant</a>
+<a href="index.php">Test</a>
+
+<a href="index.php?<?php echo generateQueryParameters(['console_id' => 'id','order' => 'price', 'direction' => 'desc']); ?>">Trier par prix décroissant</a>
+<a href="index.php?<?php echo generateQueryParameters(['order' => 'price', 'direction' => 'asc']); ?>">Trier par prix croissant</a>
+<a href="index.php?<?php echo generateQueryParameters(['order' => 'note', 'direction' => 'asc']); ?>">Trier par note croissant</a>
+<a href="index.php?<?php echo generateQueryParameters(['order' => 'note', 'direction' => 'desc']); ?>">Trier par note décroissant</a>

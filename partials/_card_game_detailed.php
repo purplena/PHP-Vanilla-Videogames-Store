@@ -28,7 +28,7 @@ function render_card_game_detailed($game)
     </div>
 <?php }
 
-function render_console($console)
-{
-    echo "<span>" . $console['console_name'] . "</span>" . "<br>";
-}
+// function render_console($console)
+// {
+//     echo "<span>" . $console['console_name'] . "</span>" . "<br>";
+// }

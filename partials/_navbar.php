@@ -23,52 +23,31 @@
                         <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Trier
                         </a>
-                        <?php
-
-                        $query_parameters = [];
-                        parse_str($_SERVER['QUERY_STRING'], $query_parameters);
-                        var_dump($query_parameters);
-
-
-                        function href_construnctor($order)
-                        {
-                            $baseURI = parse_url($_SERVER['REQUEST_URI'])['path'];
-                            $queryString = $_SERVER['QUERY_STRING'];
-                            if (strpos($queryString, "&")) {
-                                $queryString = explode("&", $_SERVER['QUERY_STRING'])[0];
-                            } else {
-                                $queryString;
-                            }
-                            if ($baseURI == "/index.php") {
-                                return ".." . $baseURI . "?order_par_prix=$order";
-                            } else if ($baseURI == "/games_by_console.php") {
-                                return ".." . $baseURI . "?" . $queryString . "&order_par_prix=$order";
-                            }
-                        }
-
-                        ?>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="<?php echo href_construnctor("asc"); ?>">
+                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'asc']) ?>">
                                     Prix croissant
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="<?php echo href_construnctor("desc"); ?>">
+                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'desc']) ?>">
                                     Prix décroissant
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'note_media', 'direction' => 'desc']) ?>">
                                     Meilleur note presse
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href=" ../index.php?<?php echo generateQueryParameters(['order' => 'note_utilisateur', 'direction' => 'desc']) ?>">
                                     Meilleur note utilisateur
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom-drop-filters" aria-current="page" href="../index.php">Drop filters</a>
                     </li>
                 </ul>
             </div>

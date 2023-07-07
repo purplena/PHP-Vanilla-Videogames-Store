@@ -11,3 +11,14 @@ function date_converter($date)
 
     return $formattedDate;
 }
+
+function generateQueryParameters(array $newQueryParameters)
+{
+    $currentQueryParameters = [];
+    parse_str($_SERVER['QUERY_STRING'], $currentQueryParameters);
+
+    foreach ($newQueryParameters as $key => $value) {
+        $currentQueryParameters[$key] = $value;
+    }
+    return http_build_query($currentQueryParameters);
+};

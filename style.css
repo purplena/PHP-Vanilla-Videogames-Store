@@ -88,6 +88,10 @@ h1 {
   color: #fefefe;
 }
 
+.nav-link-custom-drop-filters {
+  background: #444a53;
+}
+
 .navbar-collapse {
   border-bottom: 2px #eeecf4 solid;
 }
