@@ -11,7 +11,10 @@ GROUP BY console.id";
             while ($console = mysqli_fetch_assoc($result)) {
 ?>
                 <li>
-                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['console_id' => $console['id']]) ?>">
+                    <!-- <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['console_id' => $console['id']]) ?>">
+                        <?php echo $console['label'] ?> ( <?php echo $console['total'] ?> )
+                    </a> -->
+                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['filter_name' => 'console_id', 'filter_value' => $console['id']]) ?>">
                         <?php echo $console['label'] ?> ( <?php echo $console['total'] ?> )
                     </a>
                 </li>
