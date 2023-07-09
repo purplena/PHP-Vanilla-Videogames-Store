@@ -18,7 +18,7 @@ function render_game($game)
                 <p>Avis utilisateur: <span class="text-bold text-blue"><?php echo $game['note_utilisateur'] ?></span>/20</p>
             </div>
         </div>
-        <a class="see-details-button btn btn-primary" href="../detail.php?<?php echo generateQueryParameters(['jeu_id' => $game['id']]); ?>">Voir detail</a>
+        <a class="see-details-button btn btn-primary" href="../detail.php?<?php echo generateQueryParameters(['jeu_id' => $game['id']], 'page'); ?>">Voir detail</a>
 
     </div>
 <?php

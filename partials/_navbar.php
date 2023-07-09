@@ -35,22 +35,22 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'asc']) ?>">
+                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'asc'], 'page') ?>">
                                     Prix croissant
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'desc']) ?>">
+                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'desc'], 'page') ?>">
                                     Prix décroissant
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'note_media', 'direction' => 'desc']) ?>">
+                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'note_media', 'direction' => 'desc'], 'page') ?>">
                                     Meilleur note presse
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href=" ../index.php?<?php echo generateQueryParameters(['order' => 'note_utilisateur', 'direction' => 'desc']) ?>">
+                                <a class="dropdown-item" href=" ../index.php?<?php echo generateQueryParameters(['order' => 'note_utilisateur', 'direction' => 'desc'], 'page') ?>">
                                     Meilleur note utilisateur
                                 </a>
                             </li>

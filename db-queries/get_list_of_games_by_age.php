@@ -10,10 +10,7 @@ function get_list_of_games_by_age()
             while ($age = mysqli_fetch_assoc($result)) {
 ?>
                 <li>
-                    <!-- <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['restriction_age' => $age['label']]) ?>">
-                        <?php echo $age['label'] ?> ans + ( <?php echo $age['total'] ?> )
-                    </a> -->
-                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['filter_name' => 'restriction_age', 'filter_value' => $age['label']]) ?>">
+                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['filter_name' => 'restriction_age', 'filter_value' => $age['label']], 'price') ?>">
                         <?php echo $age['label'] ?> ans + ( <?php echo $age['total'] ?> )
                     </a>
                 </li>

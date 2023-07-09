@@ -12,7 +12,7 @@ function date_converter($date)
     return $formattedDate;
 }
 
-function generateQueryParameters(array $newQueryParameters)
+function generateQueryParameters(array $newQueryParameters, $parameterToRemove = null)
 {
     $currentQueryParameters = [];
     parse_str($_SERVER['QUERY_STRING'], $currentQueryParameters);
@@ -20,5 +20,11 @@ function generateQueryParameters(array $newQueryParameters)
     foreach ($newQueryParameters as $key => $value) {
         $currentQueryParameters[$key] = $value;
     }
+
+    if ($parameterToRemove && array_key_exists($parameterToRemove, $currentQueryParameters)) {
+        unset($currentQueryParameters[$parameterToRemove]);
+    }
+
+
     return http_build_query($currentQueryParameters);
 };
