@@ -30,53 +30,54 @@
                             <a class="nav-link nav-link-custom nav-link-my-games" aria-current="page" href="../my-games.php">Mes jeux</a>
                         </li>
                     <?php } ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Par console
-                        </a>
-                        <ul class="dropdown-menu">
-                            <?php get_list_of_consoles() ?>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Par age
-                        </a>
-                        <ul class="dropdown-menu">
-                            <?php get_list_of_games_by_age() ?>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle filter-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-filter"></i> Trier
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'asc'], 'page') ?>">
-                                    Prix croissant
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'desc'], 'page') ?>">
-                                    Prix décroissant
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'note_media', 'direction' => 'desc'], 'page') ?>">
-                                    Meilleur note presse
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href=" ../index.php?<?php echo generateQueryParameters(['order' => 'note_utilisateur', 'direction' => 'desc'], 'page') ?>">
-                                    Meilleur note utilisateur
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link filter-custom filter-custom-danger" aria-current="page" href="../index.php">Effacer tous</a>
-                    </li>
+                    <?php if (!($_SERVER['REQUEST_URI'] == "/my-games.php")) { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Par console
+                            </a>
+                            <ul class="dropdown-menu">
+                                <?php get_list_of_consoles() ?>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Par age
+                            </a>
+                            <ul class="dropdown-menu">
+                                <?php get_list_of_games_by_age() ?>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle filter-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-filter"></i> Trier
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'asc'], 'page') ?>">
+                                        Prix croissant
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'desc'], 'page') ?>">
+                                        Prix décroissant
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'note_media', 'direction' => 'desc'], 'page') ?>">
+                                        Meilleur note presse
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href=" ../index.php?<?php echo generateQueryParameters(['order' => 'note_utilisateur', 'direction' => 'desc'], 'page') ?>">
+                                        Meilleur note utilisateur
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link filter-custom filter-custom-danger" aria-current="page" href="../index.php">Effacer tous</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

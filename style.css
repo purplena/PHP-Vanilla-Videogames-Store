@@ -201,6 +201,7 @@ h2 {
 .image-in-detailed-card {
   width: 250px;
   height: inherit;
+  object-fit: cover;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -238,4 +239,31 @@ h2 {
 
 .text-blue {
   color: #0d6efd;
+}
+
+/* __________________________________________ADD GAME FORM ________________________________ */
+
+.add-new-game-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  /* display: block; */
+  margin-bottom: 0.25rem;
+}
+
+.input-title,
+textarea,
+.div-price-date,
+.div-age-note,
+.input-image {
+  margin-bottom: 1rem;
+}
+
+.error-form-add {
+  color: #ac2886;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
 }

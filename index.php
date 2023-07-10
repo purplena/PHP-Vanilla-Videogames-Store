@@ -42,8 +42,6 @@
                 get_all_games(0, "", "", $currentPage);
             }
         };
-
-
         ?>
     </section>
 

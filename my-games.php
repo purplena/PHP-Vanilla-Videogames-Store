@@ -7,10 +7,16 @@
 <?php require './db-queries/get_all_games.php'; ?>
 <?php require './db-queries/get_all_games_by_age.php'; ?>
 <?php require './partials/_game-card.php'; ?>
+<?php require './db-queries/get_all_games_by_user.php'; ?>
+<?php require './db-queries/get_game_by_id.php'; ?>
+<?php require './partials/_card_game_detailed.php'; ?>
 
 
 <main class="section-container">
+    <h1>Mes jeux</h1>
     <section class="section">
-        <h1>My games</h1>
+        <?php get_all_games_by_user($_SESSION['id']); ?>
     </section>
 </main>
+
+<?php require './partials/_footer.php'; ?>
