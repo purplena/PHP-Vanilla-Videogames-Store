@@ -142,6 +142,21 @@ INSERT INTO `jeu` (`id`, `titre`, `description`, `prix`, `date_sortie`, `image_p
 	(14, 'The Legend of Zelda : Breath of the Wild', 'The Legend of Zelda: Breath of the Wild est un jeu d\'action/aventure. Link se réveille d\'un sommeil de 100 ans dans un royaume d\'Hyrule dévasté.Il lui faudra percer les mystères du passé et vaincre Ganon, le fléau. L\'aventure prend place dans un gigantesque monde ouvert et accorde ainsi une part importante à l\'exploration. Le titre a été pensé pour que le joueur puisse aller où il veut dès le début, s\'éloignant de la linéarité habituelle de la série.', 5199, '2017-03-03 00:00:00', 'zelda.jpg', 14, 3);
 /*!40000 ALTER TABLE `jeu` ENABLE KEYS */;
 
+ALTER TABLE `jeu`
+ADD `user_id` INT(11) NULL,
+ADD CONSTRAINT `FK_user_jeu`
+FOREIGN KEY (`user_id`)
+REFERENCES `user` (`id`);
+
+-- We add a table USER
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user`(
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `email` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL
+);
+
+
 -- Listage de la structure de la table video-games. note
 DROP TABLE IF EXISTS `note`;
 CREATE TABLE IF NOT EXISTS `note` (

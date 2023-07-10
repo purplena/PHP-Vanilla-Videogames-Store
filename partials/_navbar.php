@@ -1,17 +1,35 @@
 <div class="d-flex flex-column navbar-container">
-    <div>
-        <a href="../index.php">
-            <img class="m-2 logo logo-image" src="../images/logo.png" alt="Logo du site">
-        </a>
+    <?php session_start(); ?>
+    <div class="d-flex flex-row justify-content-between">
+        <div>
+            <a href="../index.php">
+                <img class="m-2 logo logo-image" src="../images/logo.png" alt="Logo du site">
+            </a>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <?php if (!isset($_SESSION['email'])) { ?>
+                <a href="../register.php" class="btn btn-primary">S'enregistrer</a>
+                <a href="../login.php" class="login-btn">Se connecter</a>
+            <?php } else { ?>
+                <p class="mb-0">Bienvenue <span class="text-bold" style="color: #ac2886;"><?php echo $_SESSION['email'] ?></span></p>
+                <a href="../add-new-game.php" class="btn btn-primary">Ajouter un jeu</a>
+                <a href="../db-queries/logout.php" class="login-btn">Déconnexion</a>
+            <?php } ?>
+        </div>
     </div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom" aria-current="page" href="../index.php">Tous les jeux</a>
                     </li>
+                    <?php if (isset($_SESSION['email'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom nav-link-my-games" aria-current="page" href="../my-games.php">Mes jeux</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Par console

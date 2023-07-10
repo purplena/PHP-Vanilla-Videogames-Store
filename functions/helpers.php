@@ -28,3 +28,12 @@ function generateQueryParameters(array $newQueryParameters, $parameterToRemove =
 
     return http_build_query($currentQueryParameters);
 };
+
+
+function validate($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
