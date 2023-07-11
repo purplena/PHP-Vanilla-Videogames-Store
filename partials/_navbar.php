@@ -30,7 +30,7 @@
                             <a class="nav-link nav-link-custom nav-link-my-games" aria-current="page" href="../my-games.php">Mes jeux</a>
                         </li>
                     <?php } ?>
-                    <?php if (!($_SERVER['REQUEST_URI'] == "/my-games.php")) { ?>
+                    <?php if (!($_SERVER['REQUEST_URI'] == "/my-games.php" || $_SERVER['REQUEST_URI'] == "/add-new-game.php")) { ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Par console

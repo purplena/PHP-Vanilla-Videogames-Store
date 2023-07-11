@@ -6,7 +6,6 @@ session_start();
 if (isset($_SESSION['id'])) {
 
     global $connection;
-
     // Here we take all variables after submitting the form
     $titre = validate($_POST['titre']);
     $description = validate($_POST['description']);
@@ -18,20 +17,42 @@ if (isset($_SESSION['id'])) {
     $note_media = $_POST['note_media'];
     $note_utilisateur = $_POST['note_utilisateur'];
 
-
-
     // Here I make the basic validation
     if (empty($titre) || empty($description) || empty($prix) || empty($created_at) || empty($image) || empty($note_media) || empty($note_utilisateur)) {
         header("Location: ../add-new-game.php?error=Veuillez remplir tous les champs");
         exit();
     }
 
+    //We check the price. I know that it is not the best way to do it. But I decided not to change the integrity of the existing database.
+    $hasDot = strpos($_POST['prix'], '.') !== false;
+    if ($hasDot) {
+        header("Location: ../add-new-game.php?error=Veuillez saisir le prix sans virgule/point. Example: 9.99 = 10");
+        exit();
+    };
+
+    //We take list of all consoles and stock them in the array $list_of_consoles
+    $list_of_consoles = [];
+    foreach ($_POST as $key => $value) {
+        if ($value === 'on') {
+            $list_of_consoles[] = $key;
+        }
+        $list_of_consoles;
+    }
+
+    if (count($list_of_consoles) == 0) {
+        header("Location: ../add-new-game.php?error=Veuillez choisir la/les console(s)");
+        exit();
+    }
+
+
     //Here I check image(file) extensions
     $imageFileType = strtolower(pathinfo($image["name"], PATHINFO_EXTENSION));
     $allowedTypes = array("jpg", "jpeg", "png");
     if (!in_array($imageFileType, $allowedTypes)) {
         header("Location: ../add-new-game.php?error=Veuillez ajouter JPG, JPEG on PNG");
+        exit();
     }
+
 
     //Here we redirect our image to the right folder and create $image_path that will be inserted to the DB
     $targetDir = "../images/games/";
@@ -79,14 +100,7 @@ if (isset($_SESSION['id'])) {
             exit();
         }
     }
-    //We take list of all consoles and stock them in the array $list_of_consoles
-    $list_of_consoles = [];
-    foreach ($_POST as $key => $value) {
-        if ($value === 'on') {
-            $list_of_consoles[] = $key;
-        }
-        $list_of_consoles;
-    }
+
 
 
     //Here I take the highest id of the JEU to make a connection between jeu.id = game_console.jeu_id

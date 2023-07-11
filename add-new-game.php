@@ -10,21 +10,21 @@
 
 
 <main class="section-container">
-    <h1>Ajoutez un nouveau jeux</h1>
+    <h1 class="contrast-color">Ajoutez un nouveau jeux</h1>
     <section class="section">
         <form class="add-new-game-form" action="./db-queries/add_new_game.php" method="post" enctype="multipart/form-data">
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error-form-add"><?php echo $_GET['error'] ?></p>
             <?php } ?>
             <label for="titre">Titre: </label>
-            <input class="input-title" type="text" name="titre" placeholder="Titre de jeu">
+            <input class="input-title input" type="text" name="titre" placeholder="Titre de jeu" value="<?php echo isset($_POST['titre']) ? $_POST['titre'] : ''; ?>">
             <label for="description">Description: </label>
-            <textarea name="description" rows="5" cols="33">Veuillez laisser la description du jeu</textarea>
+            <textarea name="description" rows="5" cols="33" placeholder="Veuillez laisser la description du jeu"><?php echo isset($_POST['description']) ? $_POST['description'] : ''; ?></textarea>
             <div class="div-price-date">
                 <label for="prix">Prix: </label>
-                <input type="number" min="1" step="any" name="prix">
+                <input class="input" type="number" min="1" step="any" name="prix" value="<?php echo isset($_POST['prix']) ? $_POST['prix'] : ''; ?>">
                 <label for="date_sortie">Date de sortie:</label>
-                <input type="datetime-local" name="date_sortie">
+                <input class="input" type="datetime-local" name="date_sortie" value="<?php echo isset($_POST['date_sortie']) ? $_POST['date_sortie'] : ''; ?>">
             </div>
             <div class="div-age-note">
                 <label for="age_id">Restriction d'age:</label>
@@ -56,7 +56,10 @@
                     <?php get_short_list_of_consoles() ?>
                 </fieldset>
             </div>
-            <input class="input-image" type="file" name="image">
+            <!-- <input class="input-image" type="file" name="image"> -->
+            <label class="custom-file-upload input-image">
+                <input type="file" name="image" value="<?php echo isset($_POST['image']) ? $_POST['image'] : ''; ?>">
+            </label>
             <input type="submit" class="btn btn-primary">
         </form>
     </section>

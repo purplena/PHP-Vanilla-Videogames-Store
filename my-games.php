@@ -15,7 +15,13 @@
 <main class="section-container">
     <h1>Mes jeux</h1>
     <section class="section">
-        <?php get_all_games_by_user($_SESSION['id']); ?>
+        <div class="my-games-container">
+            <?php if (get_all_games_by_user($_SESSION['id']) == null) { ?>
+                <p>Tu peux ajouter ton jeu en cliquant ici <a class="contrast-color" href="./add-new-game.php">AJOUTER</a></p>
+            <?php } else {
+                get_all_games_by_user($_SESSION['id']);
+            } ?>
+        </div>
     </section>
 </main>
 

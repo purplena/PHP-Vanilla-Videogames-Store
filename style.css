@@ -54,6 +54,10 @@ h1 {
   border-radius: 25px;
 }
 
+.contrast-color {
+  color: #ac2886;
+}
+
 /* _________________________________________NAVBAR __________________________________________________________ */
 
 .login-btn {
@@ -249,8 +253,11 @@ h2 {
 }
 
 label {
-  /* display: block; */
+  text-transform: uppercase;
   margin-bottom: 0.25rem;
+  color: #ac2886;
+  font-weight: 700;
+  font-size: 0.75rem;
 }
 
 .input-title,
@@ -266,4 +273,101 @@ textarea,
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+.input,
+textarea {
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+}
+
+select {
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+}
+
+input:valid,
+input:invalid {
+  box-shadow: none;
+  outline: none;
+}
+
+textarea:valid,
+textarea:invalid {
+  box-shadow: none;
+  outline: none;
+}
+
+.custom-file-upload {
+  border: none;
+}
+
+legend {
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  color: #ac2886;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+::placeholder {
+  font-size: 0.75rem;
+}
+
+/* _________________________________________REGISTER & LOGIN FORM ______________________________________________ */
+#form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label-in-register-form {
+  margin-bottom: 0.5rem;
+}
+
+.input-in-register-form {
+  margin-bottom: 1rem;
+}
+
+#form button {
+  margin-bottom: 1.5rem;
+}
+
+#form .error {
+  color: #ac2886;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.input-in-register-form {
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+}
+
+.input-in-register-form:valid,
+.input-in-register-form:invalid {
+  box-shadow: none;
+  outline: none;
+}
+
+/* _______________________________________________________MY GAMES______________________________________________________ */
+.my-games-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* _______________________________________________________PAGINATION_______________________________________________________ */
+.pagination {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

@@ -55,7 +55,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 mysqli_close($connection);
 
                 //si on a un résultat on renvoie un message d'erreur
-                header("Location: ../index.php?error=Cet email existe déjà");
+                header("Location: ../register.php?error=Cet email existe déjà");
                 exit();
             } else {
                 //si on a pas de résultat on peut inserer dans la BDD
