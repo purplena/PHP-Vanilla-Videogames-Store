@@ -51,7 +51,7 @@
                             <a class="nav-link dropdown-toggle filter-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-filter"></i> Trier
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-custom">
                                 <li>
                                     <a class="dropdown-item" href="../index.php?<?php echo generateQueryParameters(['order' => 'prix', 'direction' => 'asc'], 'page') ?>">
                                         Prix croissant

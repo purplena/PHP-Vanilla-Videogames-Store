@@ -24,6 +24,10 @@ function render_card_game_detailed($game)
                     <p>Avis utilisateur: <span class="text-bold text-blue"><?php echo $game['note_utilisateur'] ?></span>/20</p>
                 </div>
             </div>
+            <?php if ($_SERVER['REQUEST_URI'] == '/my-games.php') { ?>
+                <a href="../db-queries/delete_game.php?jeu_id=<?php echo $game['id']; ?>" class="btn btn-primary delete-button">Supprimer</a>
+            <?php } ?>
         </div>
+
     </div>
 <?php }

@@ -103,7 +103,7 @@ h1 {
   color: #fefefe;
 }
 
-.filter-custom {
+.nav-link.dropdown-toggle.filter-custom {
   display: block;
   background: transparent;
   color: #0d6efd;
@@ -120,6 +120,35 @@ h1 {
 
 .navbar-collapse {
   border-bottom: 2px #eeecf4 solid;
+}
+
+.dropdown-menu {
+  background: #0d6efd;
+  border-radius: 0;
+}
+
+.dropdown-menu-custom {
+  background: #fefefe;
+  border: 1px solid #0d6efd;
+}
+
+.dropdown-menu-custom .dropdown-item {
+  color: #0d6efd;
+}
+
+.dropdown-item,
+.dropdown-item:active {
+  color: #fefefe;
+}
+
+.dropdown-item:hover {
+  color: #0d6efd;
+  background: #fefefe;
+  font-weight: 700;
+}
+
+.nav-link.dropdown-toggle {
+  color: #fefefe;
 }
 
 /* _____________________________SINGLE CARD CONTAINER && INDEX SECTION_______________________________ */
@@ -245,16 +274,19 @@ h2 {
   color: #0d6efd;
 }
 
-/* __________________________________________ADD GAME FORM ________________________________ */
-
-.add-new-game-form {
-  display: flex;
-  flex-direction: column;
+.delete-button {
+  margin-bottom: 1rem;
+  background: #ac2886;
 }
+
+.delete-button:hover {
+  background: #380329;
+}
+
+/* __________________________________________ADD GAME FORM ________________________________ */
 
 label {
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
   color: #ac2886;
   font-weight: 700;
   font-size: 0.75rem;
@@ -262,10 +294,29 @@ label {
 
 .input-title,
 textarea,
-.div-price-date,
 .div-age-note,
 .input-image {
   margin-bottom: 1rem;
+}
+
+.div-price-date {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.div-price-date input {
+  width: 100px;
+}
+
+.div-age-note {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .error-form-add {
